@@ -37,6 +37,10 @@ module GifBackend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+
+    config.debug_exception_response_format = :api
+
+
     # Access-Control-Allow-Origin
     config.middleware.insert_before 0, Rack::Cors do
       allow do

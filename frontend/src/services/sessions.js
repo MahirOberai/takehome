@@ -34,3 +34,21 @@ export const login = (params) => {
       return response.json()
     })
 }
+
+export const getGifs = (params) => {
+  return fetch('http://localhost:3000/gifs', {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params)
+  })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(err => {
+          throw new Error(err.message)
+        })
+      }
+      return response.json()
+    })
+}
