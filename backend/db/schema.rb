@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_213216) do
   create_table "gifs", force: :cascade do |t|
     t.string "title"
     t.string "url"
+    t.boolean "is_selected"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -25,9 +25,8 @@ export default function Navbar( { searchTitle, handleChange }) {
   const auth = useContext(AuthContext)
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [gifs, setGifs] = useState([]);
-  const [currentView, setCurrentView] = useState('');
-  
+  const [currentView, setCurrentView] = useState(null)
+
   const handleClose = () => {
     setAnchorEl(null);
   };

@@ -22,10 +22,10 @@ function App() {
   const [savedGifs, setSavedGifs] = useState([]);
   const [gifs, setGifs] = useState([]);
 
-  const api_url = `http://localhost:3000/gifs`
+  const api_url = `http://localhost:3000/`
 
   useEffect(() => {
-    axios(api_url, {
+    axios(api_url + 'gifs', {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
@@ -34,6 +34,21 @@ function App() {
     })
     .then(response => {
       setGifs(response.data)
+    })
+    .catch(err => console.log(err))
+  }, []);
+
+  useEffect(() => {
+    axios(api_url + 'saved', {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Authorization': auth.token,
+      },
+    })
+    .then(response => {
+      setSavedGifs(response.data)
+      console.log(savedGifs)
     })
     .catch(err => console.log(err))
   }, []);
@@ -50,9 +65,13 @@ function App() {
     return <Auth />
   }
 
-  if (!gifs.length) {
-    return <div className='tc'><h1>Loading Gifs</h1></div>;
-  }  
+  // if (!gifs.length) {
+  //   return <div className='tc'><h1>Loading Gifs Feed</h1></div>;
+  // }  
+
+  // if (!savedGifs.length) {
+  //   return <div className='tc'><h1>Loading Saved Gifs</h1></div>;
+  // }  
 
   return (
     <div className="container">

@@ -1,5 +1,6 @@
 .menu-item {
-    min-width: 20%;
+    // min-width: 20%;
+    width: 30%;
     height: 240px;
     flex: 1 1 auto;
     display: flex;
@@ -68,13 +69,14 @@
   }
 
   .menu-item-selected {
-    min-width: 20%;
+    // min-width: 20%;
+    width: 30%;
     height: 240px;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid purple;
+    border: 3px solid purple;
     margin: 0 7.5px 15px;
     overflow: hidden;
 
